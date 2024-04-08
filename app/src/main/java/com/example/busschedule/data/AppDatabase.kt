@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+
 /**NOTES
  * [BusSchedule::class] is an array literal and can only be used in annotations.
  * Outside annotations you must use arrayOf() or specific functions like intArrayOf()
@@ -12,6 +13,7 @@ import androidx.room.RoomDatabase
  **/
 @Database(entities = [BusSchedule::class], version = 1, exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
+
     abstract fun busScheduleDao(): BusScheduleDao
 
     /**NOTES
@@ -35,8 +37,8 @@ abstract class AppDatabase: RoomDatabase() {
                     AppDatabase::class.java,
                     "app_database"
                 )
+                    .addMigrations(DatabaseMigration.MIGRATION_1_2)
                     .createFromAsset("database/bus_schedule.db")
-                    //TODO("Try to code migration before submitting")
                     .fallbackToDestructiveMigration()
                     .build()
                     .also{
@@ -45,4 +47,7 @@ abstract class AppDatabase: RoomDatabase() {
             }
         }
     }
+
 }
+
+

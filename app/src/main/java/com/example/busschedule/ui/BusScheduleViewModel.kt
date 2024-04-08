@@ -24,7 +24,6 @@ import com.example.busschedule.BusScheduleApplication
 import com.example.busschedule.data.BusSchedule
 import com.example.busschedule.data.BusScheduleDao
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
 
 class BusScheduleViewModel(
     private val busScheduleDao: BusScheduleDao): ViewModel() {
@@ -36,7 +35,7 @@ class BusScheduleViewModel(
      * function return type at compile time to ensure compatibility.
      * Since this is compared at compile time there is not runtime overhead.
      */
-    fun getFullSchedule() = busScheduleDao.getAll()
+    fun getFullSchedule(): Flow<List<BusSchedule>> = busScheduleDao.getAll()
 
     /** Gets the schedule by stop name in ASC order.
      * NOTES

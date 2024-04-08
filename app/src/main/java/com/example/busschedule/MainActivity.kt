@@ -24,6 +24,11 @@ import com.example.busschedule.ui.theme.BusScheduleTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        /**
+         * Composes the given composable into the given activity.
+         * The content will become the root view of the given activity.
+         * This is roughly equivalent to calling
+         * */
         setContent {
             BusScheduleTheme {
                 BusScheduleApp()

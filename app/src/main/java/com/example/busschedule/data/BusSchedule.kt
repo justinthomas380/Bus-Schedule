@@ -18,6 +18,7 @@ package com.example.busschedule.data
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+
 /**
  * @Entity lets the compiler know this is a room.
  * This is a single table in the database.
